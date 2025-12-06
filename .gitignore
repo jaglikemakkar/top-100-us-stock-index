@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# DuckDB database files
+*.duckdb
+*.duckdb.wal
+
+# VS Code
+.vscode/
+
+# Mac OS metadata
+.DS_Store
+
+# Environment variables
+.env

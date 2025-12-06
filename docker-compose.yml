@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: stock_index-api
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DUCKDB_PATH=app/stocks.duckdb
+    depends_on:
+      - redis
+    volumes:
+      - ./app:/app/app
+      - ./app/stocks.duckdb:/app/app/stocks.duckdb
+
+  redis:
+    image: redis:7
+    container_name: stock_index-redis
+    ports:
+      - "6379:6379"

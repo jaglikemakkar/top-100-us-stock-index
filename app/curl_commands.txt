@@ -1,0 +1,22 @@
+Build Index:
+curl -X POST "http://localhost:8000/build-index" \
+     -H "Content-Type: application/json" \
+     -d '{"start_date": "2025-11-01", "end_date": "2025-12-31"}'
+
+
+Check Performance:
+curl "http://localhost:8000/index-performance?start_date=2025-11-01&end_date=2025-12-31"
+
+
+Check composition for a specific date:
+curl "http://localhost:8000/index-composition?date=2025-01-12"
+
+Check changes:
+curl "http://localhost:8000/composition-changes?start_date=2025-11-01&end_date=2025-12-31"
+
+
+Export to Excel:
+curl -X POST "http://localhost:8000/export-data" \
+     -H "Content-Type: application/json" \
+     -o export.xlsx \
+     -d '{"start_date":"2025-11-01","end_date":"2025-12-31"}'

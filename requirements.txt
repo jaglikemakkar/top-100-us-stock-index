@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+redis
+duckdb
+pandas
+yfinance
+requests
+XlsxWriter
+pydantic-settings
+python-dotenv
